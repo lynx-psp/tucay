@@ -50,7 +50,25 @@
                                     <span class="text-danger">{{ $message }}</span>
                                 @enderror
 
+                    <div class="form-group col-6">
+                                    <label for="exampleInputEmail1">Middle Name
+                                    </label>
+                                    <input type="text" class="form-control" id="midname" name="midname"
+                                        placeholder="Enter your Middle name" require>
+                                </div>
+                                @error('midname')
+                                    <span class="text-danger">{{ $message }}</span>
+                                @enderror
 
+                                
+                                <div class="form-group col-6">
+                                    <label for="exampleInputEmail1">Age</label>
+                                    <input type="text" class="form-control" id="age" name="age"
+                                        placeholder="Enter your age">
+                                </div>
+                                @error('age')
+                                    <span class="text-danger">{{ $message }}</span>
+                                @enderror
 
 
                                 <div class="form-group col-6">
@@ -65,8 +83,8 @@
 
 
                                 <div class="form-group col-6">
-                                    <label for="exampleInputPassword1">Phone</label>
-                                    <input type="number" class="form-control" id="zip" name="zip" placeholder="">
+                                    <label for="exampleInputPassword1">Zip</label>
+                                    <input type="number" class="form-control" id="zip" name="zip" placeholder="Enter Your zip code">
                                 </div>
                                 @error('zip')
                                     <span class="text-danger">{{ $message }}</span>
@@ -113,8 +131,10 @@
                                 <th>ID</th>
                                 <th>First Name</th>
                                 <th>Last Name</th>
-                                <th>Phone</th>
-                                <th>Action</th>
+                                <th>Middle Name</th>
+                                <th>Age</th>
+                                <th>Address</th>
+                                <th>Zip</th>
                             </tr>
                         </thead>
 
@@ -123,13 +143,17 @@
                                 <tr>
 
                                     <td class="">{{ $items->id }}</td>
-                                    <td>{{ $items->fname }}</td>
-                                    <td>{{ $items->lname }}</td>
-                                    <td>{{ $items->zip }}</td>
-                                    <td>
-                                            <a href="{{ route('', ) }}"  class="btn btn-primary btn-sm">Update</a>
-
-                                            <a href="{{ route('', $items->) }}" class="btn btn-danger btn-sm">Delete</a>
+                                        <td>{{$items->fname}}</td>
+                                <td>{{$items->lname}}</td>
+                                <td>{{$items->midname}}</td>
+                                <td>{{$items->age}}</td>
+                                <td>{{$items->address}}</td>
+                                <td>{{$items->zip}}</td>
+                                <td> 
+                                 <span class="badge bg-success"><a href="{{ route('employee.edit',$items->id) }}"  class="btn btn-primary btn-sm">Update</a>
+                               </td>
+                                <td> 
+                                <span class="badge bg-danger"><a href="{{ route('employee.delete',$items->id) }}" class="btn btn-danger btn-sm">Delete</a>
                                     </td>
 
                                 </tr>
