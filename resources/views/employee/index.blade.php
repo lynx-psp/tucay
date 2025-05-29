@@ -127,9 +127,9 @@
                                     <td>{{ $items->lname }}</td>
                                     <td>{{ $items->zip }}</td>
                                     <td>
-                                            <a href="{{ route('employee.edit', $items->id) }}"  class="btn btn-primary btn-sm">Update</a>
+                                            <a href="{{ route('', ) }}"  class="btn btn-primary btn-sm">Update</a>
 
-                                            <a href="{{ route('employee.delete', $items->id) }}" class="btn btn-danger btn-sm">Delete</a>
+                                            <a href="{{ route('', $items->) }}" class="btn btn-danger btn-sm">Delete</a>
                                     </td>
 
                                 </tr>
